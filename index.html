@@ -132,6 +132,13 @@ body{margin:0;background:#f3f2ec;color:#262826}
 .hs-top{background:#1f211f;color:#f3f2ec;padding:22px 20px 26px}
 .hs-top-in{max-width:900px;margin:0 auto}
 .hs-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;color:#e6e6df;text-decoration:none}
+.hs-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 16px}
+.hs-pages{min-width:0;max-width:100%;overflow-x:auto;scrollbar-width:none}
+.hs-pages::-webkit-scrollbar{display:none}
+.hs-pages ul{list-style:none;display:flex;gap:6px}
+.hs-pages a{display:block;white-space:nowrap;text-decoration:none;font-size:13.5px;font-weight:700;color:#f3f2ec;background:#3a3d3a;border-radius:5px;padding:5px 11px 6px;box-shadow:inset 0 -3px 0 rgba(0,0,0,.4)}
+.hs-pages a:hover{background:#4a4d48}
+.hs-pages a[aria-current=page]{background:#c5cfb5;color:#1d2819;box-shadow:inset 0 -3px 0 rgba(0,0,0,.18)}
 .hs-mark{width:26px;height:32px;border-radius:5px;background:#3a3d3a;border:2px solid #0e0f0e;display:grid;grid-template-rows:9px 1fr;gap:3px;padding:3px}
 .hs-mark i{display:block;background:#c5cfb5;border-radius:2px}
 .hs-mark b{display:block;border-radius:2px;background:repeating-linear-gradient(90deg,#e05a1a 0 5px,transparent 5px 7px)}
@@ -158,7 +165,7 @@ body{margin:0;background:#f3f2ec;color:#262826}
 .hs-k{width:46px;height:30px;border-radius:4px;background:#3a3d3a;box-shadow:inset 0 -3px 0 rgba(0,0,0,.45)}
 .hs-k--eq{background:#e05a1a}
 .hs-foot{background:#1f211f;color:#d9dad3;padding:36px 20px 28px;border-top:4px solid #0e0f0e;font-size:14px;line-height:1.7}
-.hs-foot-in{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:24px}
+.hs-foot-in{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:24px}
 .hs-foot p.hs-ft{font-weight:800;color:#c5cfb5;font-size:13.5px;letter-spacing:.02em;margin-bottom:6px}
 .hs-foot ul{list-style:none;display:grid;gap:3px}
 .hs-foot a{color:#f3f2ec;text-decoration:none}
@@ -167,7 +174,7 @@ body{margin:0;background:#f3f2ec;color:#262826}
 .hs-foot-bot a{display:inline-block;background:#3a3d3a;border-radius:5px;padding:4px 10px;box-shadow:inset 0 -3px 0 rgba(0,0,0,.4);color:#f3f2ec}
 @media (max-width:760px){
 .hs-body{grid-template-columns:1fr}
-.hs-foot-in{grid-template-columns:1fr 1fr}
+.hs-foot-in{grid-template-columns:1fr 1fr 1fr}
 .hs-foot-in > div:first-child{grid-column:1/-1}
 }
 @media (max-width:560px){
@@ -181,6 +188,7 @@ body{margin:0;background:#f3f2ec;color:#262826}
 .hs-div-lcd{height:26px}
 .hs-foot{padding:30px 16px 24px}
 .hs-foot-in{grid-template-columns:1fr}
+.hs-pages a{font-size:13px;padding:5px 9px 6px}
 }
 
 :where(.hk-code) *,:where(.hk-code) *::before,:where(.hk-code) *::after{box-sizing:border-box;margin:0;padding:0}
@@ -341,6 +349,7 @@ body{margin:0;background:#f3f2ec;color:#262826}
 .hq-in .hq-btn{margin-top:auto;align-self:flex-start}
 .hq-in .hq-note + .hq-btn,.hq-in dl + .hq-btn{margin-top:12px}
 .hq-tile--top{border-color:var(--hq-org);box-shadow:inset 0 -5px 0 #f3c9b3}
+.hq-more{margin-top:28px;text-align:center}
 .hq-tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:14px;font-size:14px;background:#fbfbf8;border:2px solid var(--hq-ink);border-radius:8px;overflow:hidden}
 .hq-tbl caption{caption-side:top;text-align:left;font-size:14px;font-weight:700;padding:0 0 8px;color:#3b3e39}
 .hq-tbl th,.hq-tbl td{padding:9px 10px;border-bottom:1.5px solid var(--hq-gray);vertical-align:top;text-align:left}
@@ -665,7 +674,15 @@ body{margin:0;background:#f3f2ec;color:#262826}
 <!-- ===== 헤더 ===== -->
 <header class="hs-top" id="top">
 <div class="hs-top-in">
+<div class="hs-bar">
 <a class="hs-brand" href="https://hts.agd-offer.co.kr/"><span class="hs-mark" aria-hidden="true"><i></i><b></b></span>호텔스닷컴 할인코드</a>
+<nav class="hs-pages" aria-label="호텔스닷컴 할인 페이지">
+<ul>
+<li><a href="./" aria-current="page">홈</a></li>
+<li><a href="coupon/">호텔스닷컴 쿠폰</a></li>
+</ul>
+</nav>
+</div>
 <div class="hs-body">
 <div>
 <h1>호텔스닷컴 할인코드 모음</h1>
@@ -1103,6 +1120,8 @@ body{margin:0;background:#f3f2ec;color:#262826}
 </div>
 <p class="hq-cmp-cap" id="hq-cmp-cap">신라스테이 서초 강남 1박을 할인코드로만 깎으면 SPECIAL10을 써도 540,000원이라, 회원 특가가 224,160원 더 쌉니다. 기획전 요금이 있는 숙소는 할인코드보다 기획전 요금을 먼저 확인하는 편이 결제액이 낮습니다.</p>
 </div>
+
+<p class="hq-more"><a class="hq-btn" href="coupon/">호텔스닷컴 쿠폰 전체 보기</a></p>
 
 </div>
 </section>
@@ -1749,6 +1768,20 @@ body{margin:0;background:#f3f2ec;color:#262826}
 <li><a href="https://fft.trip-offer.co.kr/" target="_blank" rel="noopener">파페치 쿠폰</a></li>
 </ul>
 </div>
+<!--@FOOTER-LINKS-->
+<div>
+<p class="hs-ft">다른 할인코드</p>
+<ul>
+<li><a href="tripcom/">트립닷컴 할인코드</a></li>
+<li><a href="klook/">클룩 할인코드</a></li>
+<li><a href="agoda/">아고다 할인코드</a></li>
+<li><a href="myrealtrip/">마이리얼트립 할인코드</a></li>
+<li><a href="kkday/">kkday 할인코드</a></li>
+<li><a href="rakutentravel/">라쿠텐트래블 할인코드</a></li>
+<li><a href="usimsa/">유심사 할인코드</a></li>
+</ul>
+</div>
+<!--@/FOOTER-LINKS-->
 </div>
 <div class="hs-foot-bot">
 <p>© 2026 호텔스닷컴 할인코드</p>
